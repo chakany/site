@@ -6,7 +6,7 @@ baseurl: ''
 profilepic: 'https://www.gravatar.com/avatar/a928b7f8c4c49402acae9b7a2497b2c3'
 bkimage: '/images/bk1.jpg'
 # google_analytics: UA-XXXXXX-X
-font_awesome: 'https://kit.fontawesome.com/8032c05865.js'
+font_awesome: 'fontawesome.js'
 
 author:
   name: 'Jack C'
