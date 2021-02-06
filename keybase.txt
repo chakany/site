@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jacany
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://chaker.xyz
+  * I am jacany (https://keybase.io/jacany) on keybase.
+  * I have a public key ASCYgEIXcy9671V8mVUUbVqilbt3xWGJ5Oh4v5u6LU6lIgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120969f696cf5cdd58503a0391a9b2d21d5ecbbb6e77c3221b0a090afbbb95a5f2f0a",
+      "host": "keybase.io",
+      "kid": "012098804217732f7aef557c9955146d5aa295bb77c56189e4e878bf9bba2d4ea5220a",
+      "uid": "99cf641b29d74e58ef9194370e186219",
+      "username": "jacany"
+    },
+    "merkle_root": {
+      "ctime": 1612580047,
+      "hash": "b9a8c9c9f44fb7ee37ed42d655f5794baf0c4a0da48baa2e8975effcf638b29bdae81598526a446464054f1ba43ba181d32f576fce6ab52d4c0fe16f19b850ed",
+      "hash_meta": "aa5b181b094226175afbde866cca34d4b3e94a4fbf756495c97bf8cbf9a5e1d7",
+      "seqno": 19025799
+    },
+    "service": {
+      "entropy": "qjhRA6348PqhW5gg2hmBO8Rb",
+      "hostname": "chaker.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.0"
+  },
+  "ctime": 1612580072,
+  "expire_in": 504576000,
+  "prev": "dbfb1f674b3dd5b1581f0ebc32344fd2bf58b52900a87ae36e29d7e7d0e79bd2",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgmIBCF3Mveu9VfJlVFG1aopW7d8VhieToeL+bui1OpSIKp3BheWxvYWTESpcCEMQg2/sfZ0s91bFYHw68MjRP0r9YtSkAqHrjbinX59Dnm9LEIEluT1+B7THeXXefd27heOVvyAiZxvTFYC2smeUwmoB6AgHCo3NpZ8RASoOM/KTDoDF8/iP2iKDOt08jzoOO+ePxKXGwN7om3jA+asa9WKSde0ELAwCLxzLymOuam/6Z1a5Ru9j7hygFBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIImkQBFhgx4PkB/0TD/C0cMu5h3vzHPW2VxjEEcr5oDho3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jacany
+
+==================================================================
