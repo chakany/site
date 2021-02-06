@@ -1,18 +1,21 @@
 # Site settings
-title: Jack C
-description: 'My Personal Website'
-url: 'https://chaker.xyz'
+title: Thomas Zühlke
+description: 'Business Card Page'
+url: 'http://thomas.zuehlke.family'
 baseurl: ''
-profilepic: 'https://www.gravatar.com/avatar/a928b7f8c4c49402acae9b7a2497b2c3'
+profilepic: '/images/tzuehlke.jpg'
 bkimage: '/images/bk1.jpg'
-# google_analytics: UA-XXXXXX-X
-font_awesome: 'fontawesome.js'
+google_analytics: UA-XXXXXX-X
+font_awesome: 'XXXXXXXXXX.js'
 
 author:
-  name: 'Jack C'
-  email: jack@chaker.xyz
-  twitter_username: jacanyyy
-  github_username:  jacany
+  name: 'Thomas Zühlke'
+  email: info@thomas-zuehlke.de
+  twitter_username: thomzuehlke
+#  facebook_username: joshgerdes
+  github_username:  tzuehlke
+  linkedin_username:  thomas-zühlke-889182165
+  meetup_name: Azure-Meetup-Rostock-MV
 
 # Build settings
 destination: _site
@@ -31,4 +34,3 @@ kramdown:
 
 #plugins: ['jekyll-paginate']
 exclude: ['README.md', 'screenshot-overview.png']
-remote_theme: tzuehlke/jekyll-uno-timeline
