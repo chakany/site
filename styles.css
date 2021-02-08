@@ -4,6 +4,7 @@ html,body {
 	color: white;
 	background-color: #222;
 	font-family: 'Noto Sans JP', sans-serif;
+	user-select: none;
 }
 
 body {
