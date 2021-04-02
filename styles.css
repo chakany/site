@@ -14,7 +14,11 @@ body {
 	margin: 100px;
 }
 
-a {
+#song-title {
+    color: inherit;
+}
+
+.link {
 	color: #222;
 }
 
