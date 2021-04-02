@@ -14,10 +14,17 @@ body {
 	align-content: center;
 }
 
+#particles-js {
+    height: 100vh;
+}
+
 #content {
-  margin: 100px;
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    align-content: center;
+    margin-top: 100px;
+    height: 100%;
+    width: 100%;
 }
 
 #username {
@@ -41,6 +48,7 @@ body {
 	border-color: white;
 	border-width: 2px;
 	border-style: solid;
+    margin-bottom: -20px;
 }
 
 #social {
