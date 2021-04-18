@@ -8,10 +8,11 @@ html,body {
 }
 
 body {
-    margin: 0;
+    	margin: 0;
 	display: block;
 	text-align: center;
 	align-content: center;
+	overflow: hidden;
 }
 
 #particles-js {
