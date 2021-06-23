@@ -1,18 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
-html,body {
-	color: white;
-	background-color: #222;
-	font-family: 'Noto Sans JP', sans-serif;
-	user-select: none;
+html,
+body {
+    color: white;
+    background-color: #222;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
 }
 
 body {
-    	margin: 0;
-	display: block;
-	text-align: center;
-	align-content: center;
-	overflow: hidden;
+    margin: 0;
+    display: block;
+    text-align: center;
+    align-content: center;
+    overflow: hidden;
 }
 
 #particles-js {
@@ -20,7 +21,7 @@ body {
 }
 
 #content {
-  position: absolute;
+    position: absolute;
     text-align: center;
     align-content: center;
     margin-top: 100px;
@@ -41,24 +42,24 @@ body {
 }
 
 .link {
-	color: #222;
+    color: #222;
 }
 
 #avatar {
-	border-radius: 50%;
-	border-color: white;
-	border-width: 2px;
-	border-style: solid;
+    border-radius: 50%;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
     margin-bottom: -20px;
 }
 
 #social {
-	margin-top: 30px;
+    margin-top: 30px;
 }
 
 .social-icon {
-	font-size: 30px;
-	margin-left: 10px;
-	margin-right: 10px;
-	color: white;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
 }
