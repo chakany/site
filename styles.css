@@ -37,6 +37,9 @@ body {
 #name {
     margin-bottom: 0px;
     padding-top: 10px;
+}
+
+.alt-font {
     font-weight: normal;
     font-family: "Archivo Black", sans-serif;
 }
