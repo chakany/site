@@ -99,7 +99,7 @@
 	}
 
 	:global(a) {
-		@apply underline decoration-purple-500;
+		@apply underline decoration-2 decoration-purple-600;
 	}
 
 	.header {
