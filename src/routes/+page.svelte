@@ -37,6 +37,7 @@
 	</div>
 
 	<div class="mx-6 sm:mx-24 lg:mx-44 2xl:mx-72">
+		<a href="https://blog.jacany.com" class="header">View my blog</a>
 		<h2 class="header">About me</h2>
 		<p>
 			Hi, I'm Jack. I'm a Web Developer from the <span class="text-red-500">U</span>S<span
