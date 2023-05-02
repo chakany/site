@@ -22,15 +22,17 @@
 	<div class="flex justify-center gap-3 text-lg font-bold sm:text-xl md:text-3xl lg:text-5xl">
 		<div class="my-auto flex">👋 Hello i'm</div>
 		<div class="flex flex-col gap-5">
-			<div class="subtext" style="opacity: {$secondRow};">a Programmer</div>
+			<div class="subtext" style="opacity: {$secondRow};">a Student</div>
 			<div class="subtext" style="opacity: {$firstRow};">a Web Developer</div>
-			<div
-				class="rounded border-2 border-solid border-gray-400 bg-gray-200 p-3 dark:border-slate-600 dark:bg-slate-800"
-			>
-				Jack Chakany
+			<div>
+				<div
+						class="rounded border-2 border-solid border-gray-400 bg-gray-200 p-3 dark:border-slate-600 dark:bg-slate-800"
+				>
+					Jack Chakany
+				</div>
 			</div>
-			<div class="subtext" style="opacity: {$firstRow};">a Student</div>
-			<div class="subtext" style="opacity: {$secondRow};">a ???</div>
+			<div class="subtext" style="opacity: {$firstRow};">a Programmer</div>
+			<div class="subtext" style="opacity: {$secondRow};">an Open Source Contributor</div>
 		</div>
 	</div>
 
