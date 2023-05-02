@@ -1,6 +1,5 @@
 <script lang="ts">
 	import "../app.css";
-	export const prerender = true;
 	import { tweened } from "svelte/motion";
 
 	const firstRow = tweened(0, {
