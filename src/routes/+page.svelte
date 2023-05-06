@@ -81,7 +81,7 @@
 		</ul>
 
 		<h2 class="header">What are you currently involved in?</h2>
-		Currently, i'm involved in creating censorship-resisitant apps that are based on the<a
+		Currently, i'm involved in creating censorship-resistant apps that are based on the <a
 			class="underline"
 			href="https://nostr.com">nostr protocol</a
 		>.
