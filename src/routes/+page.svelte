@@ -92,6 +92,9 @@
 			<li>Bitcoin On-chain: bc1q49f4sffeldlwc5dj8m6rxygnul52rvstqlpm2w</li>
 			<li>Lightning: donate@jacany.com</li>
 		</ul>
+
+		<h2 class="header">Canary</h2>
+		If this section disappears then something is wrong that I cannot disclose.
 	</div>
 </div>
 
