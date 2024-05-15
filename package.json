@@ -26,9 +26,5 @@
 		"typescript": "^5.4.5",
 		"vite": "^5.2.11"
 	},
-	"type": "module",
-	"dependencies": {
-		"@nostr-dev-kit/ndk": "^2.8.2",
-		"@nostr-dev-kit/ndk-svelte": "^2.2.15"
-	}
+	"type": "module"
 }
