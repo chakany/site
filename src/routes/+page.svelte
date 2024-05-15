@@ -23,7 +23,7 @@
 		<div class="my-auto flex">👋 Hello i'm</div>
 		<div class="flex flex-col gap-5">
 			<div class="subtext" style="opacity: {$secondRow};">a Student</div>
-			<div class="subtext" style="opacity: {$firstRow};">a Web Developer</div>
+			<div class="subtext" style="opacity: {$firstRow};">a Developer</div>
 			<div>
 				<div
 						class="rounded border-2 border-solid border-gray-400 bg-gray-200 p-3 dark:border-slate-600 dark:bg-slate-800"
@@ -31,36 +31,41 @@
 					Jack Chakany
 				</div>
 			</div>
-			<div class="subtext" style="opacity: {$firstRow};">a Programmer</div>
+			<div class="subtext" style="opacity: {$firstRow};">a Bitcoiner</div>
 			<div class="subtext" style="opacity: {$secondRow};">an Open Source Contributor</div>
 		</div>
 	</div>
 
 	<div class="mx-6 sm:mx-24 lg:mx-44 2xl:mx-72">
-		<a href="https://blog.jacany.com" class="header">View my blog</a>
 		<h2 class="header">About me</h2>
 		<p>
-			Hi, I'm Jack. I'm a Web Developer from the <span class="text-red-500">U</span>S<span
-				class="text-blue-500">A</span
-			>. As of right now i'm currently working on various hobby projects, and my studies. I'm
-			best in Web Development, but I know a variety of languages including C# and Go.
+			I'm a programmer from New Jersey. Right now, i'm building Hoot Mail at <a target="_blank" href="https://chakany.systems">Chakany Systems</a>
 		</p>
 
-		<h2 class="header">Projects</h2>
+		<h2 class="header">Projects / Things i've worked on</h2>
 		<ul class="list-inside list-disc">
 			<li>
-				<a href="https://nosbin.com">nosbin.com</a> - a censorship-resistant alternative to GitHub
-				Gists
+				<a href="https://hoot.sh" target="_blank">Hoot Mail</a> - Nostr Email, coming soon.
 			</li>
 			<li>
-				<a href="https://github.com/jacany/nblog">nblog</a> - self-host your own nostr-based
+				<a href="https://github.com/chakanysystems/yandk">yandk</a> - yet another nostr dev kit. written in rust.
+			</li>
+			<li>
+				<a href="https://zap.cooking" target="_blank">zap.cooking</a> - publish your food recipes, and get zapped Bitcoin. I implemented the redesign site wide.
+			</li>
+			<li>
+				<a href="https://github.com/jacany/nblog" target="_blank">nblog</a> - self-host your own nostr-based
 				ghost blog
+			</li>
+			<li>
+				<a href="https://nosbin.com" target="_blank">nosbin.com</a> - a censorship-resistant alternative to GitHub
+				Gists
 			</li>
 		</ul>
 
 		<h2 class="header">Connect</h2>
 		<ul class="list-inside list-disc">
-			<li><a href="https://github.com/jacany">GitHub</a></li>
+			<li><a href="https://github.com/chakany">GitHub</a></li>
 			<li><a href="https://twitter.com/@jacanyyy">Twitter</a></li>
 			<li>Contact me on nostr</li>
 			<ul class="list-inside list-disc pl-6">
@@ -90,11 +95,7 @@
 		Donating to support me or my projects is very generous. Thank you!
 		<ul>
 			<li>Bitcoin On-chain: bc1q49f4sffeldlwc5dj8m6rxygnul52rvstqlpm2w</li>
-			<li>Lightning: donate@jacany.com</li>
 		</ul>
-
-		<h2 class="header">Canary</h2>
-		If this section disappears then something is wrong that I cannot disclose.
 	</div>
 </div>
 
