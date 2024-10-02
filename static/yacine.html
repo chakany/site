@@ -33,11 +33,29 @@
         .unsupported {
             color: red;
         }
+        #drop-zone {
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        #drop-zone.dragover {
+            background-color: #f0f0f0;
+            border-color: #888;
+        }
     </style>
 </head>
 <body>
     <h1>Video Transcoder</h1>
-    <input type="file" id="input-file" accept=".webm,.avi,.mov">
+    <div id="drop-zone">Drag and drop video file here or click to select</div>
+    <input type="file" id="input-file" accept=".webm,.avi,.mov" style="display: none;">
     <select id="output-codec">
         <option value="avc1.42E01E">H.264</option>
         <option value="vp8">VP8</option>
@@ -57,20 +75,11 @@
         const progressBar = document.getElementById('progress-bar');
         const supportInfo = document.getElementById('support-info');
         const downloadLink = document.getElementById('download-link');
+        const dropZone = document.getElementById('drop-zone');
 
         function checkSupport() {
             const codecs = ['avc1.42E01E', 'vp8', 'vp9', 'av01.0.08M.08'];
-            const containers = ['webm', 'avi', 'mov', 'mp4'];
-
-            codecs.forEach(codec => {
-                const supported = MediaRecorder.isTypeSupported(`video/${codec}`);
-                supportInfo.innerHTML += `<p>${codec}: <span class="${supported ? 'supported' : 'unsupported'}">${supported ? 'Supported' : 'Unsupported'}</span></p>`;
-            });
-
-            containers.forEach(container => {
-                const supported = MediaRecorder.isTypeSupported(`video/${container}`);
-                supportInfo.innerHTML += `<p>${container}: <span class="${supported ? 'supported' : 'unsupported'}">${supported ? 'Supported' : 'Unsupported'}</span></p>`;
-            });
+            const containers = ['webm', 'AV1', 'quicktime', 'mp4'];
         }
 
         async function transcodeVideo() {
@@ -89,8 +98,9 @@
                 const sourceVideo = document.createElement('video');
                 sourceVideo.src = URL.createObjectURL(sourceBlob);
 
-                await sourceVideo.play();
-                sourceVideo.pause();
+                await new Promise((resolve) => {
+                    sourceVideo.onloadedmetadata = resolve;
+                });
 
                 const stream = sourceVideo.captureStream();
                 const mediaRecorder = new MediaRecorder(stream, {
@@ -125,6 +135,32 @@
 
             reader.readAsArrayBuffer(file);
         }
+
+        dropZone.addEventListener('click', () => {
+            inputFile.click();
+        });
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            inputFile.files = e.dataTransfer.files;
+            dropZone.textContent = e.dataTransfer.files[0].name;
+        });
+
+        inputFile.addEventListener('change', () => {
+            if (inputFile.files.length > 0) {
+                dropZone.textContent = inputFile.files[0].name;
+            }
+        });
 
         checkSupport();
     </script>
