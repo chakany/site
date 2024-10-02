@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Transcoder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #progress-container {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        #progress-bar {
+            width: 0;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+        #support-info {
+            margin-top: 20px;
+        }
+        .supported {
+            color: green;
+        }
+        .unsupported {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Transcoder</h1>
+    <input type="file" id="input-file" accept=".webm,.avi,.mov">
+    <select id="output-codec">
+        <option value="avc1.42E01E">H.264</option>
+        <option value="vp8">VP8</option>
+        <option value="vp9">VP9</option>
+        <option value="av01.0.08M.08">AV1</option>
+    </select>
+    <button onclick="transcodeVideo()">Transcode</button>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <div id="support-info"></div>
+    <a id="download-link" style="display: none;">Download Transcoded Video</a>
+
+    <script>
+        const inputFile = document.getElementById('input-file');
+        const outputCodec = document.getElementById('output-codec');
+        const progressBar = document.getElementById('progress-bar');
+        const supportInfo = document.getElementById('support-info');
+        const downloadLink = document.getElementById('download-link');
+
+        function checkSupport() {
+            const codecs = ['avc1.42E01E', 'vp8', 'vp9', 'av01.0.08M.08'];
+            const containers = ['webm', 'avi', 'mov', 'mp4'];
+
+            codecs.forEach(codec => {
+                const supported = MediaRecorder.isTypeSupported(`video/${codec}`);
+                supportInfo.innerHTML += `<p>${codec}: <span class="${supported ? 'supported' : 'unsupported'}">${supported ? 'Supported' : 'Unsupported'}</span></p>`;
+            });
+
+            containers.forEach(container => {
+                const supported = MediaRecorder.isTypeSupported(`video/${container}`);
+                supportInfo.innerHTML += `<p>${container}: <span class="${supported ? 'supported' : 'unsupported'}">${supported ? 'Supported' : 'Unsupported'}</span></p>`;
+            });
+        }
+
+        async function transcodeVideo() {
+            const file = inputFile.files[0];
+            if (!file) {
+                alert('Please select a file');
+                return;
+            }
+
+            const codec = outputCodec.value;
+            const reader = new FileReader();
+
+            reader.onload = async function(e) {
+                const sourceBuffer = e.target.result;
+                const sourceBlob = new Blob([sourceBuffer], { type: file.type });
+                const sourceVideo = document.createElement('video');
+                sourceVideo.src = URL.createObjectURL(sourceBlob);
+
+                await sourceVideo.play();
+                sourceVideo.pause();
+
+                const stream = sourceVideo.captureStream();
+                const mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: `video/webm; codecs=${codec}`,
+                    videoBitsPerSecond: 5000000
+                });
+
+                const chunks = [];
+                mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+
+                mediaRecorder.onstop = () => {
+                    const outputBlob = new Blob(chunks, { type: 'video/mp4' });
+                    const url = URL.createObjectURL(outputBlob);
+                    downloadLink.href = url;
+                    downloadLink.download = `output_${codec}.mp4`;
+                    downloadLink.style.display = 'block';
+                };
+
+                mediaRecorder.start();
+                sourceVideo.play();
+
+                sourceVideo.ontimeupdate = () => {
+                    const progress = (sourceVideo.currentTime / sourceVideo.duration) * 100;
+                    progressBar.style.width = `${progress}%`;
+                };
+
+                sourceVideo.onended = () => {
+                    mediaRecorder.stop();
+                    sourceVideo.ontimeupdate = null;
+                };
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+        checkSupport();
+    </script>
+</body>
+</html>
