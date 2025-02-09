@@ -90,12 +90,6 @@
 			class="underline"
 			href="https://nostr.com">nostr protocol</a
 		>.
-
-		<h2 class="header">Donate</h2>
-		Donating to support me or my projects is very generous. Thank you!
-		<ul>
-			<li>Bitcoin On-chain: bc1q49f4sffeldlwc5dj8m6rxygnul52rvstqlpm2w</li>
-		</ul>
 	</div>
 </div>
 
