@@ -50,18 +50,6 @@
 				</div>
 			</li>
 			<li class="eva-terminal">
-				<div class="font-bold uppercase">YANDK</div>
-				<div class="normal-case">
-					<a href="https://github.com/chakanysystems/yandk">github.com/chakanysystems/yandk</a> - yet another nostr dev kit. written in rust.
-				</div>
-			</li>
-			<li class="eva-terminal">
-				<div class="font-bold uppercase">ZAP.COOKING</div>
-				<div class="normal-case">
-					<a href="https://zap.cooking" target="_blank">https://zap.cooking</a> - publish your food recipes, and get zapped Bitcoin.
-				</div>
-			</li>
-			<li class="eva-terminal">
 				<div class="font-bold uppercase">NOSBIN.COM</div>
 				<div class="normal-case">
 					<a href="https://nosbin.com" target="_blank">https://nosbin.com</a> - a censorship-resistant alternative to GitHub Gists
