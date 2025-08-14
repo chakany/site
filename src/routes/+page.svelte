@@ -36,7 +36,7 @@
 	<div class="eva-container">
 		<h1 class="text-4xl mb-3 font-bold uppercase">JACK CHAKANY</h1>
 		<p class="mb-4 normal-case">
-			I'm a programmer & high school student from New Jersey. Right now, i'm building Hoot Mail at <a target="_blank" href="https://chakany.systems">Chakany Systems</a>
+			I'm a programmer from New Jersey. Right now, i'm building Hoot Mail at <a target="_blank" href="https://chakany.systems">Chakany Systems</a>
 		</p>
 	</div>
 
