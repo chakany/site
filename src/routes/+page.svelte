@@ -1,8 +1,14 @@
 <script lang="ts">
 	import "../app.css";
-        import Clock from "../Clock.svelte";
+	import Clock from "../Clock.svelte";
 	import { tweened } from "svelte/motion";
 	import { onMount } from "svelte";
+	import { nostr } from "../lib/stores";
+	import ListPost from "../lib/ListPost.svelte";
+	import type { Event } from "nostr-tools";
+	import { getTagValues, removeDuplicates } from "../lib/util";
+
+	let posts: Event[] = [];
 
 	const firstRow = tweened(0, {
 		duration: 900,
@@ -22,6 +28,33 @@
 			secondRow.set(1);
 			progressValue.set(100);
 		}, 1000);
+
+		$nostr.connect($nostr.relays);
+		const sub = $nostr.sub($nostr.relays, [
+			{
+				kinds: [30023],
+				authors: $nostr.pubkeys
+			}
+		]);
+
+		let tempPosts: Event[] = [];
+		sub.on("event", (event: Event) => {
+			tempPosts.push(event);
+		});
+
+		sub.on("eose", () => {
+			// sub.unsub(); 
+			if (tempPosts.length > 0) {
+				tempPosts = removeDuplicates(tempPosts);
+				tempPosts.sort((a, b) => {
+					const aPub = getTagValues(a.tags, "published_at");
+					const bPub = getTagValues(b.tags, "published_at");
+					if (!aPub || !bPub) return 0; 
+					return Number(bPub[0]) - Number(aPub[0]);
+				});
+				posts = tempPosts;
+			}
+		});
 	});
 
 	let showNpub = false;
@@ -100,6 +133,20 @@
 		<div class="eva-terminal normal-case mb-6">
 			Currently, I'm involved in creating censorship-resistant apps that are based on the <a href="https://nostr.com">nostr protocol</a>.
 		</div>
+
+		<!-- Insert Blog Posts Section Here -->
+		<h2 class="text-xl font-bold mt-6 mb-2 uppercase">LATEST POSTS</h2>
+		{#if posts.length > 0}
+			{#each posts as post (post.id)}
+				<ListPost {post} />
+				<!-- No <hr> as ListPost has margin and eva-terminal styling -->
+			{/each}
+		{:else}
+			<div class="eva-terminal normal-case p-4 my-2">
+				<p>No posts found yet. Stay tuned!</p>
+			</div>
+		{/if}
+		<!-- End of Blog Posts Section -->
 	</div>
 </div>
 
