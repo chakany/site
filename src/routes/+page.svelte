@@ -46,7 +46,13 @@
 			<li class="eva-terminal">
 				<div class="font-bold uppercase">HOOT MAIL</div>
 				<div class="normal-case">
-					<a href="https://hoot.sh" target="_blank">https://hoot.sh</a> - Nostr Email, coming soon.
+					<a href="https://github.com/chakanysystems/hoot" target="_blank">chakanysystems/hoot</a> - Nostr Email, coming soon.
+				</div>
+			</li>
+			<li class="eva-terminal">
+				<div class="font-bold uppercase">ZAP COOKING</div>
+				<div class="normal-case">
+					<a href="https://zap.cooking" target="_blank">zap.cooking</a> - Nostr based decentralized recipe website. Upload a recipe, get zapped with BTC.
 				</div>
 			</li>
 			<li class="eva-terminal">
