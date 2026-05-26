@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
 
-  let estTimeString = '';
+  let pragueTimeString = '';
   let differenceString = '';
 
   // Calculate the time zone offset in minutes
@@ -53,12 +53,12 @@
     const update = () => {
       const now = new Date();
       const localOffset = -now.getTimezoneOffset(); // Local offset in minutes
-      const estOffset = getOffset("America/New_York"); // EST offset in minutes
-      const differenceMinutes = Math.round(localOffset - estOffset); // Round to nearest integer
+      const pragueOffset = getOffset("Europe/Prague"); // Prague offset in minutes
+      const differenceMinutes = Math.round(localOffset - pragueOffset); // Round to nearest integer
 
-      // Format EST time with hours, minutes, seconds
+      // Format Prague time with hours, minutes, seconds
       const formatter = new Intl.DateTimeFormat("en-US", {
-        timeZone: "America/New_York",
+        timeZone: "Europe/Prague",
         hour: "numeric",
         minute: "2-digit",
         second: "2-digit",
@@ -67,8 +67,8 @@
       const timeString = formatter.format(now);
       // Append milliseconds
       const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
-      let fuck = timeString.split(" ");
-      estTimeString = `${fuck[0]}.${milliseconds} ${fuck[1]}`;
+      let parts = timeString.split(" ");
+      pragueTimeString = `${parts[0]}.${milliseconds} ${parts[1]}`;
 
       // Set difference string (empty if less than 1 minute)
       differenceString = formatDifference(differenceMinutes);
@@ -81,7 +81,7 @@
 </script>
 
 <div>
-  {estTimeString}
+  {pragueTimeString}
   {#if differenceString !== ""}
     ({differenceString})
   {/if}
